@@ -62,6 +62,16 @@ def season_label(year: int) -> str:
     return f"{year}-{str(year + 1)[-2:]}"
 
 
+def find_col(df, candidates):
+    """Возвращает РЕАЛЬНОЕ имя колонки (строку) из candidates, если оно
+    есть в df, иначе None. В отличие от pick_col не подставляет
+    значение — нужен именно для безопасного матчинга по ключу."""
+    for c in candidates:
+        if c in df.columns:
+            return c
+    return None
+
+
 def fetch_teams():
     ts = TeamStats(COMPETITION)
     # W-L идёт из отдельного эндпоинта Standings, а не из TeamStats —
@@ -74,26 +84,39 @@ def fetch_teams():
         df = ts.get_team_stats_single_season(
             endpoint="advanced", season=year, phase_type_code=None, statistic_mode="PerGame"
         )
+        print(f"[teams advanced, {year}] columns:", list(df.columns))
         if INSPECT:
-            print(f"\n[teams advanced, {year}] columns:", list(df.columns))
             continue
 
         try:
             st_df = standings.get_standings(season=year, round_number=34)
+            print(f"[standings, {year}] columns:", list(st_df.columns))
         except Exception as e:
             print(f"  ⚠ standings недоступны для {year} (round 34): {e}")
             st_df = None
 
+        team_col = find_col(df, ["team.name", "Team", "TeamName", "team"])
+        off_col = find_col(df, ["stats.OffensiveRating", "OffensiveRating", "offensiveRating"])
+        def_col = find_col(df, ["stats.DefensiveRating", "DefensiveRating", "defensiveRating"])
+        pace_col = find_col(df, ["stats.Pace", "Pace", "pace"])
+
+        st_name_col = find_col(st_df, ["team.name", "name", "Team"]) if st_df is not None else None
+        st_wins_col = find_col(st_df, ["gamesWon", "wins", "Wins"]) if st_df is not None else None
+        st_losses_col = find_col(st_df, ["gamesLost", "losses", "Losses"]) if st_df is not None else None
+
         for _, row in df.iterrows():
-            team_name = row.get("team.name", row.get("Team", row.get("TeamName", "")))
-            off = float(row.get("stats.OffensiveRating", row.get("OffensiveRating", 0)))
-            deff = float(row.get("stats.DefensiveRating", row.get("DefensiveRating", 0)))
+            team_name = row[team_col] if team_col else "?"
+            off = float(row[off_col]) if off_col else 0.0
+            deff = float(row[def_col]) if def_col else 0.0
+            pace = float(row[pace_col]) if pace_col else 0.0
+
             wins, losses = 0, 0
-            if st_df is not None:
-                match = st_df[st_df.get("team.name", st_df.get("name", "")) == team_name]
+            if st_df is not None and st_name_col:
+                match = st_df[st_df[st_name_col] == team_name]
                 if not match.empty:
-                    wins = int(match.iloc[0].get("gamesWon", match.iloc[0].get("wins", 0)))
-                    losses = int(match.iloc[0].get("gamesLost", match.iloc[0].get("losses", 0)))
+                    wins = int(match.iloc[0][st_wins_col]) if st_wins_col else 0
+                    losses = int(match.iloc[0][st_losses_col]) if st_losses_col else 0
+
             out.append({
                 "season": season_label(year),
                 "team": team_name,
@@ -101,7 +124,7 @@ def fetch_teams():
                 "off_rating": round(off, 1),
                 "def_rating": round(deff, 1),
                 "net_rating": round(off - deff, 1),
-                "pace": round(float(row.get("stats.Pace", row.get("Pace", 0))), 1),
+                "pace": round(pace, 1),
                 "wins": wins,
                 "losses": losses,
             })
