@@ -96,35 +96,40 @@ def fetch_teams():
             st_df = None
 
         team_col = find_col(df, ["team.name", "Team", "TeamName", "team"])
-        off_col = find_col(df, ["stats.OffensiveRating", "OffensiveRating", "offensiveRating"])
-        def_col = find_col(df, ["stats.DefensiveRating", "DefensiveRating", "defensiveRating"])
-        pace_col = find_col(df, ["stats.Pace", "Pace", "pace"])
+        ts_col = find_col(df, ["trueShootingPercentage", "TrueShootingPercentage"])
 
-        st_name_col = find_col(st_df, ["team.name", "name", "Team"]) if st_df is not None else None
+        st_name_col = find_col(st_df, ["club.name", "team.name", "name", "Team"]) if st_df is not None else None
         st_wins_col = find_col(st_df, ["gamesWon", "wins", "Wins"]) if st_df is not None else None
         st_losses_col = find_col(st_df, ["gamesLost", "losses", "Losses"]) if st_df is not None else None
+        st_gp_col = find_col(st_df, ["gamesPlayed", "GamesPlayed"]) if st_df is not None else None
+        st_pf_col = find_col(st_df, ["pointsFor", "PointsFor"]) if st_df is not None else None
+        st_pa_col = find_col(st_df, ["pointsAgainst", "PointsAgainst"]) if st_df is not None else None
 
         for _, row in df.iterrows():
             team_name = row[team_col] if team_col else "?"
-            off = float(row[off_col]) if off_col else 0.0
-            deff = float(row[def_col]) if def_col else 0.0
-            pace = float(row[pace_col]) if pace_col else 0.0
+            ts_pct = float(row[ts_col]) * 100 if ts_col else 0.0  # доля -> проценты
 
             wins, losses = 0, 0
+            off, deff = 0.0, 0.0  # очки за игру своих/чужих — считаем из standings ниже
             if st_df is not None and st_name_col:
                 match = st_df[st_df[st_name_col] == team_name]
                 if not match.empty:
-                    wins = int(match.iloc[0][st_wins_col]) if st_wins_col else 0
-                    losses = int(match.iloc[0][st_losses_col]) if st_losses_col else 0
+                    m = match.iloc[0]
+                    wins = int(m[st_wins_col]) if st_wins_col else 0
+                    losses = int(m[st_losses_col]) if st_losses_col else 0
+                    gp = int(m[st_gp_col]) if st_gp_col else 0
+                    if gp:
+                        off = float(m[st_pf_col]) / gp if st_pf_col else 0.0
+                        deff = float(m[st_pa_col]) / gp if st_pa_col else 0.0
 
             out.append({
                 "season": season_label(year),
                 "team": team_name,
                 "code": str(team_name)[:3].upper(),
-                "off_rating": round(off, 1),
-                "def_rating": round(deff, 1),
-                "net_rating": round(off - deff, 1),
-                "pace": round(pace, 1),
+                "off_rating": round(off, 1),          # очков забито за игру
+                "def_rating": round(deff, 1),         # очков пропущено за игру
+                "net_rating": round(off - deff, 1),   # разница — аналог net rating
+                "pace": round(ts_pct, 1),              # True Shooting % (Pace недоступен в этом эндпоинте API)
                 "wins": wins,
                 "losses": losses,
             })
@@ -142,23 +147,42 @@ def fetch_players():
         df = ps.get_player_stats_single_season(
             endpoint="traditional", season=year, phase_type_code=None, statistic_mode="PerGame"
         )
+        print(f"[players traditional, {year}] columns:", list(df.columns))
         if INSPECT:
-            print(f"\n[players traditional, {year}] columns:", list(df.columns))
             continue
 
-        points_col = "player.pointsScored" if "player.pointsScored" in df.columns else \
-            ("Points" if "Points" in df.columns else df.columns[-1])
+        name_col = find_col(df, ["player.name", "Player", "player"])
+        team_col = find_col(df, ["player.team.name", "team.name", "Team"])
+        gp_col = find_col(df, ["gamesPlayed", "GamesPlayed"])
+        points_col = find_col(df, ["pointsScored", "player.pointsScored", "Points"])
+        reb_col = find_col(df, ["totalRebounds", "TotalRebounds", "rebounds"])
+        ast_col = find_col(df, ["assistances", "assists", "Assistances"])
+        per_col = find_col(df, ["valuation", "PIR"])
+
+        if points_col is None:
+            # запасной вариант: берём первую числовую колонку вместо
+            # того, чтобы упасть или взять что попало (как в прошлый
+            # раз — тогда так поймали URL картинки вместо очков)
+            import pandas as pd
+            numeric_cols = [c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]
+            points_col = numeric_cols[0] if numeric_cols else None
+            print(f"  ⚠ 'pointsScored' не найден, сортирую по '{points_col}' — проверь маппинг вручную")
+
+        if points_col is None:
+            print(f"  ⚠ пропускаю сезон {year} — не нашлось ни одной числовой колонки для сортировки")
+            continue
+
         top = df.sort_values(points_col, ascending=False).head(15)
         for _, row in top.iterrows():
             out.append({
                 "season": season_label(year),
-                "name": row.get("player.name", row.get("Player", "")),
-                "team": row.get("player.team.name", row.get("Team", "")),
-                "gp": int(row.get("gamesPlayed", row.get("GamesPlayed", 0))),
-                "ppg": round(float(row.get(points_col, 0)), 1),
-                "rpg": round(float(row.get("totalRebounds", row.get("TotalRebounds", 0))), 1),
-                "apg": round(float(row.get("assistances", row.get("Assistances", 0))), 1),
-                "per": round(float(row.get("valuation", row.get("PIR", 0))), 1),  # PIR/valuation — official EL efficiency index
+                "name": row[name_col] if name_col else "?",
+                "team": row[team_col] if team_col else "?",
+                "gp": int(row[gp_col]) if gp_col else 0,
+                "ppg": round(float(row[points_col]), 1) if points_col else 0,
+                "rpg": round(float(row[reb_col]), 1) if reb_col else 0,
+                "apg": round(float(row[ast_col]), 1) if ast_col else 0,
+                "per": round(float(row[per_col]), 1) if per_col else 0,  # PIR/valuation — official EL efficiency index
             })
     if INSPECT:
         return
