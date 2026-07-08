@@ -2,13 +2,11 @@ name: Update Euroleague data
 
 on:
   schedule:
-    # каждую ночь в 03:15 UTC (после того как обычно уже все матчи
-    # дня сыграны и статистика на стороне Euroleague обновилась)
     - cron: "15 3 * * *"
-  workflow_dispatch: {}  # + кнопка "Run workflow" в интерфейсе GitHub, ручной запуск когда захочешь
+  workflow_dispatch: {}
 
 permissions:
-  contents: write  # нужно, чтобы workflow мог закоммитить обновлённые data/*.json обратно в репозиторий
+  contents: write
 
 jobs:
   update-data:
@@ -27,6 +25,7 @@ jobs:
         run: python fetch_euroleague_data.py
 
       - name: Commit updated data
+        if: always()
         run: |
           git config user.name "euroleague-data-bot"
           git config user.email "actions@users.noreply.github.com"
