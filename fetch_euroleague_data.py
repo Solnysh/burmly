@@ -1,31 +1,31 @@
 """
-Euroleague Sport Lab — data pipeline
+Euroleague Sport Lab -- data pipeline
 =====================================
-Тянет статистику за последние 3 сезона через пакет euroleague_api
-и пишет JSON-файлы ровно в том формате, который ждёт index.html.
+Pulls stats for the last 3 seasons via the euroleague_api package and
+writes JSON files in exactly the shape index.html expects.
 
-Установка:
+Install:
     pip install euroleague_api --break-system-packages
 
-ПЕРВЫЙ ЗАПУСК — РАЗВЕДКА (важно, не пропускай):
+FIRST RUN -- RECON MODE (do this first):
     python fetch_euroleague_data.py --inspect
-Это распечатает реальные названия колонок, которые вернёт API,
-для каждого раздела. У меня нет сетевого доступа к api-live.euroleague.net,
-поэтому имена колонок ниже (например "OffensiveRating", "TeamName")
-— это ожидаемые/наиболее вероятные названия по документации пакета,
-а не проверенные вживую. pick_col() ниже подстрахует и подскажет,
-если угаданное имя не совпало с реальным — просто пришли мне вывод
---inspect, и я поправлю маппинг точно.
+This prints the real column names the API actually returns for each
+section. I don't have network access to api-live.euroleague.net from
+my sandbox, so the column names below (e.g. "OffensiveRating",
+"TeamName") were my best guess from the package docs, not verified
+live. pick_col() below is a safety net that warns instead of silently
+writing zeros when a guessed name doesn't match -- send me its output
+and I'll fix the mapping precisely.
 
-Обычный запуск (после того как маппинг подтверждён):
+Normal run (once the mapping is confirmed):
     python fetch_euroleague_data.py
 
-Результат кладётся в ./data/ — просто скопируй файлы поверх
-демо-данных в pet-projects/sport/data/.
+Output goes to ./data/ -- just copy the files over the demo data in
+pet-projects/sport/data/.
 
-Это не требует сервера/базы: скрипт можно гонять руками раз в неделю
-или повесить на GitHub Actions по расписанию (cron), закоммитив
-обновлённые data/*.json — сайт как был статикой, так и остаётся.
+No server or database needed: run this by hand whenever you want, or
+schedule it on GitHub Actions (cron) to commit refreshed data/*.json
+-- the site stays fully static either way.
 """
 import json
 import os
@@ -41,19 +41,19 @@ INSPECT = "--inspect" in sys.argv
 
 
 def pick_col(df, candidates, default=0):
-    """Возвращает первую колонку из candidates, которая реально есть
-    в датафрейме. Если ни одна не нашлась — предупреждает в консоль
-    вместо того, чтобы тихо писать нули."""
+    """Returns the first column from candidates that actually exists
+    in the dataframe. If none match, warns to the console instead of
+    silently writing zeros."""
     for c in candidates:
         if c in df.columns:
             return df[c]
-    print(f"  ⚠ ни одна из {candidates} не найдена. "
-          f"Реальные колонки: {list(df.columns)}")
+    print(f"  WARNING: none of {candidates} found. "
+          f"Actual columns: {list(df.columns)}")
     import pandas as pd
     return pd.Series([default] * len(df))
 
 COMPETITION = "E"  # E = Euroleague, U = Eurocup
-SEASONS = [2023, 2024, 2025]  # season = год старта (2023 -> сезон 2023-24)
+SEASONS = [2023, 2024, 2025]  # season = start year (2023 -> 2023-24 season)
 OUT_DIR = os.path.join(os.path.dirname(__file__), "data")
 os.makedirs(OUT_DIR, exist_ok=True)
 
@@ -63,9 +63,9 @@ def season_label(year: int) -> str:
 
 
 def find_col(df, candidates):
-    """Возвращает РЕАЛЬНОЕ имя колонки (строку) из candidates, если оно
-    есть в df, иначе None. В отличие от pick_col не подставляет
-    значение — нужен именно для безопасного матчинга по ключу."""
+    """Returns the ACTUAL column name (string) from candidates if it
+    exists in df, otherwise None. Unlike pick_col this doesn't
+    substitute a value -- it's meant for safe key-based matching."""
     for c in candidates:
         if c in df.columns:
             return c
@@ -73,10 +73,10 @@ def find_col(df, candidates):
 
 
 def to_float(val, percent_as_fraction=False):
-    """Безопасно приводит значение к float. API Евролиги иногда
-    отдаёт проценты готовой строкой вида '55.2%' вместо числа —
-    обрабатываем оба варианта в одном месте, чтобы не чинить
-    один и тот же баг по частям в разных функциях."""
+    """Safely coerces a value to float. The Euroleague API sometimes
+    returns percentages as a ready-made string like '55.2%' instead
+    of a number -- handle both cases in one place instead of fixing
+    the same bug piecemeal across functions."""
     if val is None:
         return 0.0
     if isinstance(val, str):
@@ -92,10 +92,10 @@ def to_float(val, percent_as_fraction=False):
 
 def fetch_teams():
     ts = TeamStats(COMPETITION)
-    # W-L идёт из отдельного эндпоинта Standings, а не из TeamStats —
-    # так надёжнее (get_standings подтверждён в исходниках пакета,
-    # round_number=34 это последний тур регулярки; для сезона с другим
-    # числом туров поправь).
+    # Wins/losses come from the separate Standings endpoint, not
+    # TeamStats -- more reliable (get_standings confirmed in the
+    # package source; round_number=34 is the last regular-season
+    # round -- adjust if a season has a different round count).
     standings = Standings(COMPETITION)
     out = []
     for year in SEASONS:
@@ -110,7 +110,7 @@ def fetch_teams():
             st_df = standings.get_standings(season=year, round_number=34)
             print(f"[standings, {year}] columns:", list(st_df.columns))
         except Exception as e:
-            print(f"  ⚠ standings недоступны для {year} (round 34): {e}")
+            print(f"  WARNING: standings unavailable for {year} (round 34): {e}")
             st_df = None
 
         team_col = find_col(df, ["team.name", "Team", "TeamName", "team"])
@@ -129,7 +129,7 @@ def fetch_teams():
             ts_pct = to_float(raw_ts, percent_as_fraction=True)
 
             wins, losses = 0, 0
-            off, deff = 0.0, 0.0  # очки за игру своих/чужих — считаем из standings ниже
+            off, deff = 0.0, 0.0  # points scored/allowed per game -- derived from standings below
             if st_df is not None and st_name_col:
                 match = st_df[st_df[st_name_col] == team_name]
                 if not match.empty:
@@ -145,10 +145,10 @@ def fetch_teams():
                 "season": season_label(year),
                 "team": team_name,
                 "code": str(team_name)[:3].upper(),
-                "off_rating": round(off, 1),          # очков забито за игру
-                "def_rating": round(deff, 1),         # очков пропущено за игру
-                "net_rating": round(off - deff, 1),   # разница — аналог net rating
-                "pace": round(ts_pct, 1),              # True Shooting % (Pace недоступен в этом эндпоинте API)
+                "off_rating": round(off, 1),          # points scored per game
+                "def_rating": round(deff, 1),         # points allowed per game
+                "net_rating": round(off - deff, 1),   # difference -- net rating analog
+                "pace": round(ts_pct, 1),              # True Shooting % (Pace isn't in this API endpoint)
                 "wins": wins,
                 "losses": losses,
             })
@@ -156,7 +156,7 @@ def fetch_teams():
         return
     with open(os.path.join(OUT_DIR, "teams.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"teams.json — {len(out)} rows")
+    print(f"teams.json -- {len(out)} rows")
 
 
 def fetch_players():
@@ -179,16 +179,16 @@ def fetch_players():
         per_col = find_col(df, ["valuation", "PIR"])
 
         if points_col is None:
-            # запасной вариант: берём первую числовую колонку вместо
-            # того, чтобы упасть или взять что попало (как в прошлый
-            # раз — тогда так поймали URL картинки вместо очков)
+            # Fallback: use the first numeric column instead of
+            # crashing or grabbing whatever's last (that's how we
+            # previously ended up sorting by a player photo URL).
             import pandas as pd
             numeric_cols = [c for c in df.columns if pd.api.types.is_numeric_dtype(df[c])]
             points_col = numeric_cols[0] if numeric_cols else None
-            print(f"  ⚠ 'pointsScored' не найден, сортирую по '{points_col}' — проверь маппинг вручную")
+            print(f"  WARNING: 'pointsScored' not found, sorting by '{points_col}' -- verify mapping manually")
 
         if points_col is None:
-            print(f"  ⚠ пропускаю сезон {year} — не нашлось ни одной числовой колонки для сортировки")
+            print(f"  WARNING: skipping season {year} -- no numeric column found to sort by")
             continue
 
         top = df.sort_values(points_col, ascending=False).head(15)
@@ -201,29 +201,30 @@ def fetch_players():
                 "ppg": round(to_float(row[points_col]), 1) if points_col else 0,
                 "rpg": round(to_float(row[reb_col]), 1) if reb_col else 0,
                 "apg": round(to_float(row[ast_col]), 1) if ast_col else 0,
-                "per": round(to_float(row[per_col]), 1) if per_col else 0,  # PIR/valuation — official EL efficiency index
+                "per": round(to_float(row[per_col]), 1) if per_col else 0,  # PIR/valuation -- official EL efficiency index
             })
     if INSPECT:
         return
     with open(os.path.join(OUT_DIR, "players.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"players.json — {len(out)} rows")
+    print(f"players.json -- {len(out)} rows")
 
 
 def fetch_shots(year: int = SEASONS[-1]):
     """
-    Тянет сырые броски (x,y координаты) по каждой игре сезона и
-    агрегирует их по 6 укрупнённым зонам площадки — то, что
-    рисует SVG-корт на дашборде. Сырых бросков очень много,
-    поэтому агрегация по зонам держит JSON компактным.
+    Pulls raw shot (x,y coordinate) data for every game of the season
+    and aggregates it into 6 coarse court zones -- what the SVG court
+    on the dashboard draws. There's a lot of raw shot data, so
+    aggregating by zone keeps the JSON compact.
 
-    Это самый медленный и хрупкий кусок пайплайна: euroleague_api
-    дергает Points-эндпоинт отдельным запросом на КАЖДУЮ игру сезона
-    (~400 запросов), и API Евролиги регулярно отвечает 429 Too Many
-    Requests — пакет сам пропускает такие игры и едет дальше, так что
-    итоговые данные по броскам могут быть неполными для части игр.
-    Не критично для дашборда (агрегаты всё равно считаются по тому,
-    что удалось скачать), но имей в виду.
+    This is the slowest and most fragile part of the pipeline:
+    euroleague_api hits the Points endpoint with a separate request
+    per game of the season (~400 requests), and the Euroleague API
+    regularly responds with 429 Too Many Requests -- the package
+    itself skips those games and moves on, so the final shot data may
+    be incomplete for some games. Not critical for the dashboard
+    (aggregates are still computed from whatever did download), but
+    worth knowing.
     """
     sd = ShotData(COMPETITION)
     df = sd.get_game_shot_data_single_season(year)
@@ -231,9 +232,9 @@ def fetch_shots(year: int = SEASONS[-1]):
     if INSPECT:
         return
 
-    team_col = find_col(df, ["TeamCode", "team.code", "Team", "TEAM_CODE", "CODETEAM"])
+    team_col = find_col(df, ["TEAM", "TeamCode", "team.code", "Team", "TEAM_CODE", "CODETEAM"])
     if team_col is None:
-        print(f"  ⚠ не нашлась колонка команды в shot data, пропускаю shots.json — сверься со списком колонок выше")
+        print(f"  WARNING: no team column found in shot data, skipping shots.json -- check the column list above")
         with open(os.path.join(OUT_DIR, "shots.json"), "w", encoding="utf-8") as f:
             json.dump([], f)
         return
@@ -260,10 +261,10 @@ def fetch_shots(year: int = SEASONS[-1]):
         })
     with open(os.path.join(OUT_DIR, "shots.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"shots.json — {len(out)} rows")
+    print(f"shots.json -- {len(out)} rows")
 
 
-# Укрупнённые зоны в координатах SVG-корта (viewBox 0 0 100 105)
+# Coarse court zones in SVG-court coordinates (viewBox 0 0 100 105)
 ZONE_BOX = {
     "Paint": {"x": 50, "y": 85, "w": 40, "h": 25},
     "Mid-range L": {"x": 18, "y": 55, "w": 24, "h": 30},
@@ -275,10 +276,11 @@ ZONE_BOX = {
 
 
 def classify_zone(row):
-    """Грубая классификация зоны по координатам броска из ShotData.
-    Значения COORD_X/COORD_Y и ZONE в сыром API — сверься с примером
-    в notebooks/get-season-stats.ipynb пакета euroleague_api, система
-    координат там своя и её стоит проверить перед первым запуском."""
+    """Rough zone classification from ShotData coordinates. The
+    COORD_X/COORD_Y/ZONE fields in the raw API -- cross-check with
+    the example in the euroleague_api package's
+    notebooks/get-season-stats.ipynb, the coordinate system there is
+    its own thing and worth verifying before the first real run."""
     zone_raw = str(row.get("ZONE", ""))
     if "A" in zone_raw or "B" in zone_raw:
         return "Paint"
@@ -295,18 +297,20 @@ def classify_zone(row):
 
 def fetch_referees():
     """
-    В официальном API нет отдельного эндпоинта "судьи" — данные о
-    бригаде судей есть в Header/Boxscore каждой игры (поля Referee1/2/3).
-    Собираем вручную: тянем header по каждой игре сезона, группируем
-    по тройке судей, считаем средние фолы и разницу штрафных дом/выезд.
-    Это самый тяжёлый по числу запросов кусок пайплайна — если не
-    нужен на первом проходе, можно закомментировать вызов в main().
+    The official API has no dedicated "referees" endpoint -- referee
+    crew data lives in each game's Header/Boxscore (Referee1/2/3
+    fields). We collect it manually: pull the header for every game
+    of the season, group by the referee trio, average fouls and the
+    home/away free-throw gap. This is the heaviest part of the
+    pipeline by request count -- comment out the call in main() if
+    you don't need it on the first pass.
     """
     gm = GameMetadata(COMPETITION)
     rows = []
     for year in SEASONS:
-        # Реальное имя метода — get_game_metadata_single_season
-        # (в первой версии скрипта было ошибочно get_game_metadata_season)
+        # Real method name is get_game_metadata_single_season
+        # (the first version of this script wrongly called it
+        # get_game_metadata_season).
         games = gm.get_game_metadata_single_season(year)
         if INSPECT:
             print(f"\n[game metadata, {year}] columns:", list(games.columns))
@@ -333,24 +337,25 @@ def fetch_referees():
         "crew": crew, "games": v["games"],
         "fouls_per_game": round(v["fouls"] / v["games"], 1),
         "home_ft_diff": round(v["ft_diff"] / v["games"], 1),
-        "technicals_per_game": 0,  # официальный API не отдаёт технические отдельно
+        "technicals_per_game": 0,  # the official API doesn't expose technicals separately
     } for crew, v in agg.items() if v["games"] >= 10]
     with open(os.path.join(OUT_DIR, "referees.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
-    print(f"referees.json — {len(out)} rows")
+    print(f"referees.json -- {len(out)} rows")
 
 
 if __name__ == "__main__":
     if INSPECT:
-        print("=== РЕЖИМ РАЗВЕДКИ: только печатаю реальные колонки API ===")
-        print("Пришли этот вывод мне — поправлю pick_col()-маппинг точно.\n")
+        print("=== RECON MODE: printing real API column names only ===")
+        print("Send me this output -- I'll fix the pick_col() mapping precisely.\n")
 
-    # Каждый блок в своём try/except: если один упадёт (новый несовпавший
-    # маппинг, rate limit и т.п.), остальные всё равно допишут свои JSON,
-    # и GitHub Action сможет закоммитить хотя бы то, что получилось.
+    # Each block runs in its own try/except: if one fails (a newly
+    # unmatched field name, a rate limit, etc.), the others still
+    # write their JSON, and the GitHub Action can commit whatever did
+    # succeed.
     steps = [("teams", fetch_teams), ("players", fetch_players), ("shots", fetch_shots)]
-    # Судейский блок самый тяжёлый (запрос на каждую игру), включай явно,
-    # когда остальное уже стабильно работает:
+    # Referees is the heaviest block (one request per game) -- enable
+    # it explicitly once the rest is stable:
     # steps.append(("referees", fetch_referees))
 
     failed = []
@@ -359,9 +364,9 @@ if __name__ == "__main__":
             fn()
         except Exception as e:
             failed.append(name)
-            print(f"⚠ Секция '{name}' упала: {e}")
+            print(f"WARNING: section '{name}' failed: {e}")
 
     if failed:
-        print(f"\nЗавершено с ошибками в: {', '.join(failed)} — остальные данные сохранены и будут закоммичены.")
-        # exit code 0 намеренно: частичный успех не должен блокировать
-        # коммит уже готовых файлов на шаге workflow
+        print(f"\nFinished with errors in: {', '.join(failed)} -- the rest of the data was saved and will be committed.")
+        # Exit code 0 on purpose: a partial success shouldn't block
+        # committing the files that did succeed.
