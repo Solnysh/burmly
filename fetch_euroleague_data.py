@@ -72,6 +72,24 @@ def find_col(df, candidates):
     return None
 
 
+def to_float(val, percent_as_fraction=False):
+    """Безопасно приводит значение к float. API Евролиги иногда
+    отдаёт проценты готовой строкой вида '55.2%' вместо числа —
+    обрабатываем оба варианта в одном месте, чтобы не чинить
+    один и тот же баг по частям в разных функциях."""
+    if val is None:
+        return 0.0
+    if isinstance(val, str):
+        val = val.strip()
+        if not val:
+            return 0.0
+        if val.endswith('%'):
+            return float(val[:-1].strip())
+        return float(val)
+    val = float(val)
+    return val * 100 if percent_as_fraction else val
+
+
 def fetch_teams():
     ts = TeamStats(COMPETITION)
     # W-L идёт из отдельного эндпоинта Standings, а не из TeamStats —
@@ -107,7 +125,8 @@ def fetch_teams():
 
         for _, row in df.iterrows():
             team_name = row[team_col] if team_col else "?"
-            ts_pct = float(row[ts_col]) * 100 if ts_col else 0.0  # доля -> проценты
+            raw_ts = row[ts_col] if ts_col else 0
+            ts_pct = to_float(raw_ts, percent_as_fraction=True)
 
             wins, losses = 0, 0
             off, deff = 0.0, 0.0  # очки за игру своих/чужих — считаем из standings ниже
@@ -117,10 +136,10 @@ def fetch_teams():
                     m = match.iloc[0]
                     wins = int(m[st_wins_col]) if st_wins_col else 0
                     losses = int(m[st_losses_col]) if st_losses_col else 0
-                    gp = int(m[st_gp_col]) if st_gp_col else 0
+                    gp = int(to_float(m[st_gp_col])) if st_gp_col else 0
                     if gp:
-                        off = float(m[st_pf_col]) / gp if st_pf_col else 0.0
-                        deff = float(m[st_pa_col]) / gp if st_pa_col else 0.0
+                        off = to_float(m[st_pf_col]) / gp if st_pf_col else 0.0
+                        deff = to_float(m[st_pa_col]) / gp if st_pa_col else 0.0
 
             out.append({
                 "season": season_label(year),
@@ -178,11 +197,11 @@ def fetch_players():
                 "season": season_label(year),
                 "name": row[name_col] if name_col else "?",
                 "team": row[team_col] if team_col else "?",
-                "gp": int(row[gp_col]) if gp_col else 0,
-                "ppg": round(float(row[points_col]), 1) if points_col else 0,
-                "rpg": round(float(row[reb_col]), 1) if reb_col else 0,
-                "apg": round(float(row[ast_col]), 1) if ast_col else 0,
-                "per": round(float(row[per_col]), 1) if per_col else 0,  # PIR/valuation — official EL efficiency index
+                "gp": int(to_float(row[gp_col])) if gp_col else 0,
+                "ppg": round(to_float(row[points_col]), 1) if points_col else 0,
+                "rpg": round(to_float(row[reb_col]), 1) if reb_col else 0,
+                "apg": round(to_float(row[ast_col]), 1) if ast_col else 0,
+                "per": round(to_float(row[per_col]), 1) if per_col else 0,  # PIR/valuation — official EL efficiency index
             })
     if INSPECT:
         return
