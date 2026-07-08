@@ -216,18 +216,42 @@ def fetch_shots(year: int = SEASONS[-1]):
     агрегирует их по 6 укрупнённым зонам площадки — то, что
     рисует SVG-корт на дашборде. Сырых бросков очень много,
     поэтому агрегация по зонам держит JSON компактным.
+
+    Это самый медленный и хрупкий кусок пайплайна: euroleague_api
+    дергает Points-эндпоинт отдельным запросом на КАЖДУЮ игру сезона
+    (~400 запросов), и API Евролиги регулярно отвечает 429 Too Many
+    Requests — пакет сам пропускает такие игры и едет дальше, так что
+    итоговые данные по броскам могут быть неполными для части игр.
+    Не критично для дашборда (агрегаты всё равно считаются по тому,
+    что удалось скачать), но имей в виду.
     """
     sd = ShotData(COMPETITION)
     df = sd.get_game_shot_data_single_season(year)
+    print(f"[shot data, {year}] columns:", list(df.columns))
     if INSPECT:
-        print(f"\n[shot data, {year}] columns:", list(df.columns))
         return
+
+    team_col = find_col(df, ["TeamCode", "team.code", "Team", "TEAM_CODE", "CODETEAM"])
+    if team_col is None:
+        print(f"  ⚠ не нашлась колонка команды в shot data, пропускаю shots.json — сверься со списком колонок выше")
+        with open(os.path.join(OUT_DIR, "shots.json"), "w", encoding="utf-8") as f:
+            json.dump([], f)
+        return
+
+    points_col = find_col(df, ["Points", "POINTS", "points"])
+    action_col = find_col(df, ["ID_ACTION", "IdAction", "action"])
+
     df["zone"] = df.apply(classify_zone, axis=1)
 
     out = []
-    for (team, zone), grp in df.groupby(["TeamCode", "zone"]):
+    for (team, zone), grp in df.groupby([team_col, "zone"]):
         attempts = len(grp)
-        makes = int(grp["Points"].gt(0).sum()) if "Points" in grp else int(grp["ID_ACTION"].str.contains("2FGM|3FGM").sum())
+        if points_col:
+            makes = int(grp[points_col].gt(0).sum())
+        elif action_col:
+            makes = int(grp[action_col].astype(str).str.contains("2FGM|3FGM").sum())
+        else:
+            makes = 0
         coords = ZONE_BOX[zone]
         out.append({
             "team": team, "season": season_label(year), "zone": zone,
@@ -320,9 +344,24 @@ if __name__ == "__main__":
     if INSPECT:
         print("=== РЕЖИМ РАЗВЕДКИ: только печатаю реальные колонки API ===")
         print("Пришли этот вывод мне — поправлю pick_col()-маппинг точно.\n")
-    fetch_teams()
-    fetch_players()
-    fetch_shots()
-    # Судейский блок дольше всех (запрос на каждую игру — 800+ штук за
-    # 3 сезона), запускай отдельно и не каждый раз:
-    # fetch_referees()
+
+    # Каждый блок в своём try/except: если один упадёт (новый несовпавший
+    # маппинг, rate limit и т.п.), остальные всё равно допишут свои JSON,
+    # и GitHub Action сможет закоммитить хотя бы то, что получилось.
+    steps = [("teams", fetch_teams), ("players", fetch_players), ("shots", fetch_shots)]
+    # Судейский блок самый тяжёлый (запрос на каждую игру), включай явно,
+    # когда остальное уже стабильно работает:
+    # steps.append(("referees", fetch_referees))
+
+    failed = []
+    for name, fn in steps:
+        try:
+            fn()
+        except Exception as e:
+            failed.append(name)
+            print(f"⚠ Секция '{name}' упала: {e}")
+
+    if failed:
+        print(f"\nЗавершено с ошибками в: {', '.join(failed)} — остальные данные сохранены и будут закоммичены.")
+        # exit code 0 намеренно: частичный успех не должен блокировать
+        # коммит уже готовых файлов на шаге workflow
