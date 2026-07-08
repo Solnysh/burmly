@@ -1,0 +1,44 @@
+[
+  {
+    "crew": "Rimac / Vukminac / Petrov",
+    "games": 60,
+    "fouls_per_game": 40.6,
+    "home_ft_diff": 0.2,
+    "technicals_per_game": 0.23
+  },
+  {
+    "crew": "Bartoli / Marx / Schulz",
+    "games": 43,
+    "fouls_per_game": 43.6,
+    "home_ft_diff": 1.6,
+    "technicals_per_game": 0.11
+  },
+  {
+    "crew": "Zenz / Anagnostopoulos / Slaven",
+    "games": 42,
+    "fouls_per_game": 45.2,
+    "home_ft_diff": 1.4,
+    "technicals_per_game": 0.28
+  },
+  {
+    "crew": "Perez / Nikolic / Diaz",
+    "games": 57,
+    "fouls_per_game": 42.8,
+    "home_ft_diff": 2.8,
+    "technicals_per_game": 0.18
+  },
+  {
+    "crew": "Vila / Sahin / Belosevic",
+    "games": 35,
+    "fouls_per_game": 38.9,
+    "home_ft_diff": -0.2,
+    "technicals_per_game": 0.26
+  },
+  {
+    "crew": "Vertelli / Konovalov / Berg",
+    "games": 44,
+    "fouls_per_game": 44.6,
+    "home_ft_diff": 0.7,
+    "technicals_per_game": 0.22
+  }
+]
