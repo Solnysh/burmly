@@ -331,14 +331,14 @@
   },
   {
     "season": "2024-25",
-    "team": "EA7 Emporio Armani Milan",
-    "code": "EA7",
-    "off_rating": 85.2,
-    "def_rating": 86.3,
-    "net_rating": -1.1,
+    "team": "Armani Olimpia Milan",
+    "code": "ARM",
+    "off_rating": 0.0,
+    "def_rating": 0.0,
+    "net_rating": 0.0,
     "pace": 61.3,
-    "wins": 17,
-    "losses": 17
+    "wins": 0,
+    "losses": 0
   },
   {
     "season": "2024-25",
