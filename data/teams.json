@@ -45,14 +45,14 @@
   },
   {
     "season": "2023-24",
-    "team": "EA7 Emporio Armani Milan",
-    "code": "EA7",
-    "off_rating": 77.8,
-    "def_rating": 77.4,
-    "net_rating": 0.4,
+    "team": "Armani Olimpia Milan",
+    "code": "ARM",
+    "off_rating": 0.0,
+    "def_rating": 0.0,
+    "net_rating": 0.0,
     "pace": 58.4,
-    "wins": 15,
-    "losses": 19
+    "wins": 0,
+    "losses": 0
   },
   {
     "season": "2023-24",
@@ -133,14 +133,14 @@
   },
   {
     "season": "2023-24",
-    "team": "Fenerbahce Beko Istanbul",
+    "team": "Fenerbahce Istanbul",
     "code": "FEN",
-    "off_rating": 83.6,
-    "def_rating": 79.6,
-    "net_rating": 4.0,
+    "off_rating": 0.0,
+    "def_rating": 0.0,
+    "net_rating": 0.0,
     "pace": 60.4,
-    "wins": 20,
-    "losses": 14
+    "wins": 0,
+    "losses": 0
   },
   {
     "season": "2023-24",
@@ -441,14 +441,14 @@
   },
   {
     "season": "2025-26",
-    "team": "Fenerbahce Beko Istanbul",
+    "team": "Fenerbahce Istanbul",
     "code": "FEN",
-    "off_rating": 82.6,
-    "def_rating": 80.3,
-    "net_rating": 2.3,
+    "off_rating": 0.0,
+    "def_rating": 0.0,
+    "net_rating": 0.0,
     "pace": 58.4,
-    "wins": 23,
-    "losses": 11
+    "wins": 0,
+    "losses": 0
   },
   {
     "season": "2025-26",
@@ -496,14 +496,14 @@
   },
   {
     "season": "2025-26",
-    "team": "EA7 Emporio Armani Milan",
-    "code": "EA7",
-    "off_rating": 85.2,
-    "def_rating": 85.6,
-    "net_rating": -0.4,
+    "team": "Armani Olimpia Milan",
+    "code": "ARM",
+    "off_rating": 0.0,
+    "def_rating": 0.0,
+    "net_rating": 0.0,
     "pace": 60.7,
-    "wins": 17,
-    "losses": 17
+    "wins": 0,
+    "losses": 0
   },
   {
     "season": "2025-26",
