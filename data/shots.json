@@ -223,8 +223,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 16,
-    "makes": 16,
+    "attempts": 10,
+    "makes": 10,
     "fg_pct": 1.0
   },
   {
@@ -235,8 +235,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 9,
+    "makes": 9,
     "fg_pct": 1.0
   },
   {
@@ -247,9 +247,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 122,
-    "makes": 83,
-    "fg_pct": 0.68
+    "attempts": 84,
+    "makes": 54,
+    "fg_pct": 0.643
   },
   {
     "team": "DUB",
@@ -259,9 +259,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 111,
-    "makes": 37,
-    "fg_pct": 0.333
+    "attempts": 86,
+    "makes": 29,
+    "fg_pct": 0.337
   },
   {
     "team": "DUB",
@@ -271,8 +271,8 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 57,
-    "makes": 38,
+    "attempts": 45,
+    "makes": 30,
     "fg_pct": 0.667
   },
   {
@@ -283,8 +283,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 2,
-    "makes": 2,
+    "attempts": 1,
+    "makes": 1,
     "fg_pct": 1.0
   },
   {
@@ -595,8 +595,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 17,
-    "makes": 17,
+    "attempts": 14,
+    "makes": 14,
     "fg_pct": 1.0
   },
   {
@@ -607,9 +607,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 104,
-    "makes": 60,
-    "fg_pct": 0.577
+    "attempts": 78,
+    "makes": 46,
+    "fg_pct": 0.59
   },
   {
     "team": "MIL",
@@ -619,9 +619,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 106,
-    "makes": 34,
-    "fg_pct": 0.321
+    "attempts": 75,
+    "makes": 28,
+    "fg_pct": 0.373
   },
   {
     "team": "MIL",
@@ -631,9 +631,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 45,
-    "makes": 29,
-    "fg_pct": 0.644
+    "attempts": 34,
+    "makes": 21,
+    "fg_pct": 0.618
   },
   {
     "team": "MIL",
@@ -655,8 +655,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 11,
+    "makes": 11,
     "fg_pct": 1.0
   },
   {
@@ -667,8 +667,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 21,
-    "makes": 21,
+    "attempts": 17,
+    "makes": 17,
     "fg_pct": 1.0
   },
   {
@@ -679,9 +679,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 107,
-    "makes": 61,
-    "fg_pct": 0.57
+    "attempts": 70,
+    "makes": 42,
+    "fg_pct": 0.6
   },
   {
     "team": "MUN",
@@ -691,9 +691,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 95,
-    "makes": 30,
-    "fg_pct": 0.316
+    "attempts": 75,
+    "makes": 26,
+    "fg_pct": 0.347
   },
   {
     "team": "MUN",
@@ -703,21 +703,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 55,
-    "makes": 37,
-    "fg_pct": 0.673
-  },
-  {
-    "team": "MUN",
-    "season": "2025-26",
-    "zone": "Top 3",
-    "x": 30,
-    "y": 10,
-    "w": 40,
-    "h": 25,
-    "attempts": 1,
-    "makes": 1,
-    "fg_pct": 1.0
+    "attempts": 46,
+    "makes": 30,
+    "fg_pct": 0.652
   },
   {
     "team": "OLY",
@@ -1087,8 +1075,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 10,
-    "makes": 10,
+    "attempts": 9,
+    "makes": 9,
     "fg_pct": 1.0
   },
   {
@@ -1099,8 +1087,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 11,
+    "makes": 11,
     "fg_pct": 1.0
   },
   {
@@ -1111,9 +1099,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 123,
-    "makes": 88,
-    "fg_pct": 0.715
+    "attempts": 90,
+    "makes": 63,
+    "fg_pct": 0.7
   },
   {
     "team": "RED",
@@ -1123,9 +1111,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 104,
-    "makes": 41,
-    "fg_pct": 0.394
+    "attempts": 78,
+    "makes": 28,
+    "fg_pct": 0.359
   },
   {
     "team": "RED",
@@ -1135,9 +1123,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 67,
-    "makes": 45,
-    "fg_pct": 0.672
+    "attempts": 45,
+    "makes": 31,
+    "fg_pct": 0.689
   },
   {
     "team": "RED",
@@ -1231,8 +1219,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 15,
-    "makes": 15,
+    "attempts": 13,
+    "makes": 13,
     "fg_pct": 1.0
   },
   {
@@ -1243,8 +1231,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 18,
-    "makes": 18,
+    "attempts": 15,
+    "makes": 15,
     "fg_pct": 1.0
   },
   {
@@ -1255,9 +1243,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 118,
-    "makes": 73,
-    "fg_pct": 0.619
+    "attempts": 91,
+    "makes": 56,
+    "fg_pct": 0.615
   },
   {
     "team": "ULK",
@@ -1267,9 +1255,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 101,
-    "makes": 37,
-    "fg_pct": 0.366
+    "attempts": 73,
+    "makes": 25,
+    "fg_pct": 0.342
   },
   {
     "team": "ULK",
@@ -1279,9 +1267,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 57,
-    "makes": 35,
-    "fg_pct": 0.614
+    "attempts": 46,
+    "makes": 30,
+    "fg_pct": 0.652
   },
   {
     "team": "ULK",
@@ -1375,8 +1363,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 10,
-    "makes": 10,
+    "attempts": 7,
+    "makes": 7,
     "fg_pct": 1.0
   },
   {
@@ -1387,8 +1375,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 29,
-    "makes": 29,
+    "attempts": 24,
+    "makes": 24,
     "fg_pct": 1.0
   },
   {
@@ -1399,9 +1387,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 109,
-    "makes": 73,
-    "fg_pct": 0.67
+    "attempts": 77,
+    "makes": 55,
+    "fg_pct": 0.714
   },
   {
     "team": "ZAL",
@@ -1411,9 +1399,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 112,
-    "makes": 38,
-    "fg_pct": 0.339
+    "attempts": 89,
+    "makes": 30,
+    "fg_pct": 0.337
   },
   {
     "team": "ZAL",
@@ -1423,9 +1411,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 47,
-    "makes": 34,
-    "fg_pct": 0.723
+    "attempts": 31,
+    "makes": 24,
+    "fg_pct": 0.774
   },
   {
     "team": "ZAL",
