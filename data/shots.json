@@ -1075,8 +1075,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 9,
-    "makes": 9,
+    "attempts": 6,
+    "makes": 6,
     "fg_pct": 1.0
   },
   {
@@ -1087,8 +1087,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 11,
-    "makes": 11,
+    "attempts": 9,
+    "makes": 9,
     "fg_pct": 1.0
   },
   {
@@ -1099,9 +1099,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 90,
-    "makes": 63,
-    "fg_pct": 0.7
+    "attempts": 56,
+    "makes": 40,
+    "fg_pct": 0.714
   },
   {
     "team": "RED",
@@ -1111,9 +1111,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 78,
-    "makes": 28,
-    "fg_pct": 0.359
+    "attempts": 54,
+    "makes": 19,
+    "fg_pct": 0.352
   },
   {
     "team": "RED",
@@ -1123,9 +1123,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 45,
-    "makes": 31,
-    "fg_pct": 0.689
+    "attempts": 25,
+    "makes": 18,
+    "fg_pct": 0.72
   },
   {
     "team": "RED",
@@ -1135,8 +1135,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 2,
-    "makes": 2,
+    "attempts": 1,
+    "makes": 1,
     "fg_pct": 1.0
   },
   {
@@ -1219,8 +1219,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 13,
-    "makes": 13,
+    "attempts": 9,
+    "makes": 9,
     "fg_pct": 1.0
   },
   {
@@ -1231,8 +1231,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 15,
-    "makes": 15,
+    "attempts": 11,
+    "makes": 11,
     "fg_pct": 1.0
   },
   {
@@ -1243,9 +1243,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 91,
-    "makes": 56,
-    "fg_pct": 0.615
+    "attempts": 50,
+    "makes": 24,
+    "fg_pct": 0.48
   },
   {
     "team": "ULK",
@@ -1255,9 +1255,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 73,
-    "makes": 25,
-    "fg_pct": 0.342
+    "attempts": 52,
+    "makes": 20,
+    "fg_pct": 0.385
   },
   {
     "team": "ULK",
@@ -1267,9 +1267,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 46,
-    "makes": 30,
-    "fg_pct": 0.652
+    "attempts": 30,
+    "makes": 24,
+    "fg_pct": 0.8
   },
   {
     "team": "ULK",
@@ -1279,8 +1279,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 2,
-    "makes": 2,
+    "attempts": 1,
+    "makes": 1,
     "fg_pct": 1.0
   },
   {
