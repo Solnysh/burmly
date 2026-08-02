@@ -595,8 +595,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 14,
-    "makes": 14,
+    "attempts": 17,
+    "makes": 17,
     "fg_pct": 1.0
   },
   {
@@ -607,9 +607,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 78,
-    "makes": 46,
-    "fg_pct": 0.59
+    "attempts": 104,
+    "makes": 60,
+    "fg_pct": 0.577
   },
   {
     "team": "MIL",
@@ -619,9 +619,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 75,
-    "makes": 28,
-    "fg_pct": 0.373
+    "attempts": 106,
+    "makes": 34,
+    "fg_pct": 0.321
   },
   {
     "team": "MIL",
@@ -631,9 +631,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 34,
-    "makes": 21,
-    "fg_pct": 0.618
+    "attempts": 45,
+    "makes": 29,
+    "fg_pct": 0.644
   },
   {
     "team": "MIL",
@@ -655,8 +655,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 11,
-    "makes": 11,
+    "attempts": 12,
+    "makes": 12,
     "fg_pct": 1.0
   },
   {
@@ -667,8 +667,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 17,
-    "makes": 17,
+    "attempts": 21,
+    "makes": 21,
     "fg_pct": 1.0
   },
   {
@@ -679,9 +679,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 70,
-    "makes": 42,
-    "fg_pct": 0.6
+    "attempts": 107,
+    "makes": 61,
+    "fg_pct": 0.57
   },
   {
     "team": "MUN",
@@ -691,9 +691,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 75,
-    "makes": 26,
-    "fg_pct": 0.347
+    "attempts": 95,
+    "makes": 30,
+    "fg_pct": 0.316
   },
   {
     "team": "MUN",
@@ -703,9 +703,21 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 46,
-    "makes": 30,
-    "fg_pct": 0.652
+    "attempts": 55,
+    "makes": 37,
+    "fg_pct": 0.673
+  },
+  {
+    "team": "MUN",
+    "season": "2025-26",
+    "zone": "Top 3",
+    "x": 30,
+    "y": 10,
+    "w": 40,
+    "h": 25,
+    "attempts": 1,
+    "makes": 1,
+    "fg_pct": 1.0
   },
   {
     "team": "OLY",
