@@ -223,8 +223,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 10,
-    "makes": 10,
+    "attempts": 16,
+    "makes": 16,
     "fg_pct": 1.0
   },
   {
@@ -235,8 +235,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 9,
-    "makes": 9,
+    "attempts": 12,
+    "makes": 12,
     "fg_pct": 1.0
   },
   {
@@ -247,9 +247,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 84,
-    "makes": 54,
-    "fg_pct": 0.643
+    "attempts": 122,
+    "makes": 83,
+    "fg_pct": 0.68
   },
   {
     "team": "DUB",
@@ -259,9 +259,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 86,
-    "makes": 29,
-    "fg_pct": 0.337
+    "attempts": 111,
+    "makes": 37,
+    "fg_pct": 0.333
   },
   {
     "team": "DUB",
@@ -271,8 +271,8 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 45,
-    "makes": 30,
+    "attempts": 57,
+    "makes": 38,
     "fg_pct": 0.667
   },
   {
@@ -283,8 +283,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 1,
-    "makes": 1,
+    "attempts": 2,
+    "makes": 2,
     "fg_pct": 1.0
   },
   {
@@ -1231,8 +1231,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 13,
-    "makes": 13,
+    "attempts": 15,
+    "makes": 15,
     "fg_pct": 1.0
   },
   {
@@ -1243,8 +1243,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 15,
-    "makes": 15,
+    "attempts": 18,
+    "makes": 18,
     "fg_pct": 1.0
   },
   {
@@ -1255,9 +1255,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 91,
-    "makes": 56,
-    "fg_pct": 0.615
+    "attempts": 118,
+    "makes": 73,
+    "fg_pct": 0.619
   },
   {
     "team": "ULK",
@@ -1267,9 +1267,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 73,
-    "makes": 25,
-    "fg_pct": 0.342
+    "attempts": 101,
+    "makes": 37,
+    "fg_pct": 0.366
   },
   {
     "team": "ULK",
@@ -1279,9 +1279,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 46,
-    "makes": 30,
-    "fg_pct": 0.652
+    "attempts": 57,
+    "makes": 35,
+    "fg_pct": 0.614
   },
   {
     "team": "ULK",
