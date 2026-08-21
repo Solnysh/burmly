@@ -7,8 +7,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 22,
-    "makes": 22,
+    "attempts": 13,
+    "makes": 13,
     "fg_pct": 1.0
   },
   {
@@ -31,9 +31,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 119,
-    "makes": 64,
-    "fg_pct": 0.538
+    "attempts": 133,
+    "makes": 73,
+    "fg_pct": 0.549
   },
   {
     "team": "ASV",
@@ -43,9 +43,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 95,
-    "makes": 22,
-    "fg_pct": 0.232
+    "attempts": 109,
+    "makes": 34,
+    "fg_pct": 0.312
   },
   {
     "team": "ASV",
@@ -56,8 +56,8 @@
     "w": 40,
     "h": 25,
     "attempts": 57,
-    "makes": 38,
-    "fg_pct": 0.667
+    "makes": 40,
+    "fg_pct": 0.702
   },
   {
     "team": "ASV",
@@ -67,12 +67,84 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 1,
-    "makes": 1,
+    "attempts": 2,
+    "makes": 2,
     "fg_pct": 1.0
   },
   {
     "team": "BAR",
+    "season": "2025-26",
+    "zone": "Corner 3 L",
+    "x": 2,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 29,
+    "makes": 29,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "BAR",
+    "season": "2025-26",
+    "zone": "Corner 3 R",
+    "x": 84,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 34,
+    "makes": 34,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "BAR",
+    "season": "2025-26",
+    "zone": "Mid-range L",
+    "x": 18,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 160,
+    "makes": 102,
+    "fg_pct": 0.637
+  },
+  {
+    "team": "BAR",
+    "season": "2025-26",
+    "zone": "Mid-range R",
+    "x": 58,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 163,
+    "makes": 59,
+    "fg_pct": 0.362
+  },
+  {
+    "team": "BAR",
+    "season": "2025-26",
+    "zone": "Paint",
+    "x": 50,
+    "y": 85,
+    "w": 40,
+    "h": 25,
+    "attempts": 87,
+    "makes": 63,
+    "fg_pct": 0.724
+  },
+  {
+    "team": "BAR",
+    "season": "2025-26",
+    "zone": "Top 3",
+    "x": 30,
+    "y": 10,
+    "w": 40,
+    "h": 25,
+    "attempts": 2,
+    "makes": 2,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "BAS",
     "season": "2025-26",
     "zone": "Corner 3 L",
     "x": 2,
@@ -84,7 +156,151 @@
     "fg_pct": 1.0
   },
   {
-    "team": "BAR",
+    "team": "BAS",
+    "season": "2025-26",
+    "zone": "Corner 3 R",
+    "x": 84,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 29,
+    "makes": 29,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "BAS",
+    "season": "2025-26",
+    "zone": "Mid-range L",
+    "x": 18,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 145,
+    "makes": 78,
+    "fg_pct": 0.538
+  },
+  {
+    "team": "BAS",
+    "season": "2025-26",
+    "zone": "Mid-range R",
+    "x": 58,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 132,
+    "makes": 39,
+    "fg_pct": 0.295
+  },
+  {
+    "team": "BAS",
+    "season": "2025-26",
+    "zone": "Paint",
+    "x": 50,
+    "y": 85,
+    "w": 40,
+    "h": 25,
+    "attempts": 96,
+    "makes": 64,
+    "fg_pct": 0.667
+  },
+  {
+    "team": "BAS",
+    "season": "2025-26",
+    "zone": "Top 3",
+    "x": 30,
+    "y": 10,
+    "w": 40,
+    "h": 25,
+    "attempts": 2,
+    "makes": 2,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "DUB",
+    "season": "2025-26",
+    "zone": "Corner 3 L",
+    "x": 2,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 30,
+    "makes": 30,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "DUB",
+    "season": "2025-26",
+    "zone": "Corner 3 R",
+    "x": 84,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 19,
+    "makes": 19,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "DUB",
+    "season": "2025-26",
+    "zone": "Mid-range L",
+    "x": 18,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 212,
+    "makes": 136,
+    "fg_pct": 0.642
+  },
+  {
+    "team": "DUB",
+    "season": "2025-26",
+    "zone": "Mid-range R",
+    "x": 58,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 187,
+    "makes": 62,
+    "fg_pct": 0.332
+  },
+  {
+    "team": "DUB",
+    "season": "2025-26",
+    "zone": "Paint",
+    "x": 50,
+    "y": 85,
+    "w": 40,
+    "h": 25,
+    "attempts": 114,
+    "makes": 76,
+    "fg_pct": 0.667
+  },
+  {
+    "team": "DUB",
+    "season": "2025-26",
+    "zone": "Top 3",
+    "x": 30,
+    "y": 10,
+    "w": 40,
+    "h": 25,
+    "attempts": 2,
+    "makes": 2,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "HTA",
+    "season": "2025-26",
+    "zone": "Corner 3 L",
+    "x": 2,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 26,
+    "makes": 26,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "HTA",
     "season": "2025-26",
     "zone": "Corner 3 R",
     "x": 84,
@@ -96,127 +312,199 @@
     "fg_pct": 1.0
   },
   {
-    "team": "BAR",
+    "team": "HTA",
     "season": "2025-26",
     "zone": "Mid-range L",
     "x": 18,
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 109,
-    "makes": 74,
-    "fg_pct": 0.679
+    "attempts": 253,
+    "makes": 155,
+    "fg_pct": 0.613
   },
   {
-    "team": "BAR",
+    "team": "HTA",
     "season": "2025-26",
     "zone": "Mid-range R",
     "x": 58,
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 116,
-    "makes": 43,
-    "fg_pct": 0.371
+    "attempts": 166,
+    "makes": 63,
+    "fg_pct": 0.38
   },
   {
-    "team": "BAR",
+    "team": "HTA",
     "season": "2025-26",
     "zone": "Paint",
     "x": 50,
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 57,
-    "makes": 41,
-    "fg_pct": 0.719
+    "attempts": 98,
+    "makes": 72,
+    "fg_pct": 0.735
   },
   {
-    "team": "BAR",
+    "team": "HTA",
     "season": "2025-26",
     "zone": "Top 3",
     "x": 30,
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 1,
-    "makes": 1,
+    "attempts": 4,
+    "makes": 4,
     "fg_pct": 1.0
   },
   {
-    "team": "BAS",
+    "team": "IST",
     "season": "2025-26",
     "zone": "Corner 3 L",
     "x": 2,
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 19,
-    "makes": 19,
+    "attempts": 29,
+    "makes": 29,
     "fg_pct": 1.0
   },
   {
-    "team": "BAS",
+    "team": "IST",
     "season": "2025-26",
     "zone": "Corner 3 R",
     "x": 84,
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 24,
-    "makes": 24,
+    "attempts": 22,
+    "makes": 22,
     "fg_pct": 1.0
   },
   {
-    "team": "BAS",
+    "team": "IST",
     "season": "2025-26",
     "zone": "Mid-range L",
     "x": 18,
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 119,
-    "makes": 70,
-    "fg_pct": 0.588
+    "attempts": 231,
+    "makes": 133,
+    "fg_pct": 0.576
   },
   {
-    "team": "BAS",
+    "team": "IST",
     "season": "2025-26",
     "zone": "Mid-range R",
     "x": 58,
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 105,
-    "makes": 33,
-    "fg_pct": 0.314
+    "attempts": 137,
+    "makes": 48,
+    "fg_pct": 0.35
   },
   {
-    "team": "BAS",
+    "team": "IST",
     "season": "2025-26",
     "zone": "Paint",
     "x": 50,
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 71,
-    "makes": 46,
-    "fg_pct": 0.648
+    "attempts": 72,
+    "makes": 54,
+    "fg_pct": 0.75
   },
   {
-    "team": "BAS",
+    "team": "IST",
     "season": "2025-26",
     "zone": "Top 3",
     "x": 30,
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 1,
-    "makes": 1,
+    "attempts": 5,
+    "makes": 5,
     "fg_pct": 1.0
   },
   {
-    "team": "DUB",
+    "team": "MAD",
+    "season": "2025-26",
+    "zone": "Corner 3 L",
+    "x": 2,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 25,
+    "makes": 25,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "MAD",
+    "season": "2025-26",
+    "zone": "Corner 3 R",
+    "x": 84,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 23,
+    "makes": 23,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "MAD",
+    "season": "2025-26",
+    "zone": "Mid-range L",
+    "x": 18,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 158,
+    "makes": 82,
+    "fg_pct": 0.519
+  },
+  {
+    "team": "MAD",
+    "season": "2025-26",
+    "zone": "Mid-range R",
+    "x": 58,
+    "y": 55,
+    "w": 24,
+    "h": 30,
+    "attempts": 120,
+    "makes": 40,
+    "fg_pct": 0.333
+  },
+  {
+    "team": "MAD",
+    "season": "2025-26",
+    "zone": "Paint",
+    "x": 50,
+    "y": 85,
+    "w": 40,
+    "h": 25,
+    "attempts": 62,
+    "makes": 41,
+    "fg_pct": 0.661
+  },
+  {
+    "team": "MAD",
+    "season": "2025-26",
+    "zone": "Top 3",
+    "x": 30,
+    "y": 10,
+    "w": 40,
+    "h": 25,
+    "attempts": 2,
+    "makes": 2,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "MCO",
     "season": "2025-26",
     "zone": "Corner 3 L",
     "x": 2,
@@ -228,70 +516,10 @@
     "fg_pct": 1.0
   },
   {
-    "team": "DUB",
+    "team": "MCO",
     "season": "2025-26",
     "zone": "Corner 3 R",
     "x": 84,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 12,
-    "makes": 12,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "DUB",
-    "season": "2025-26",
-    "zone": "Mid-range L",
-    "x": 18,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 122,
-    "makes": 83,
-    "fg_pct": 0.68
-  },
-  {
-    "team": "DUB",
-    "season": "2025-26",
-    "zone": "Mid-range R",
-    "x": 58,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 111,
-    "makes": 37,
-    "fg_pct": 0.333
-  },
-  {
-    "team": "DUB",
-    "season": "2025-26",
-    "zone": "Paint",
-    "x": 50,
-    "y": 85,
-    "w": 40,
-    "h": 25,
-    "attempts": 57,
-    "makes": 38,
-    "fg_pct": 0.667
-  },
-  {
-    "team": "DUB",
-    "season": "2025-26",
-    "zone": "Top 3",
-    "x": 30,
-    "y": 10,
-    "w": 40,
-    "h": 25,
-    "attempts": 2,
-    "makes": 2,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "HTA",
-    "season": "2025-26",
-    "zone": "Corner 3 L",
-    "x": 2,
     "y": 78,
     "w": 14,
     "h": 22,
@@ -300,163 +528,7 @@
     "fg_pct": 1.0
   },
   {
-    "team": "HTA",
-    "season": "2025-26",
-    "zone": "Corner 3 R",
-    "x": 84,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 18,
-    "makes": 18,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "HTA",
-    "season": "2025-26",
-    "zone": "Mid-range L",
-    "x": 18,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 101,
-    "makes": 64,
-    "fg_pct": 0.634
-  },
-  {
-    "team": "HTA",
-    "season": "2025-26",
-    "zone": "Mid-range R",
-    "x": 58,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 59,
-    "makes": 24,
-    "fg_pct": 0.407
-  },
-  {
-    "team": "HTA",
-    "season": "2025-26",
-    "zone": "Paint",
-    "x": 50,
-    "y": 85,
-    "w": 40,
-    "h": 25,
-    "attempts": 52,
-    "makes": 38,
-    "fg_pct": 0.731
-  },
-  {
-    "team": "HTA",
-    "season": "2025-26",
-    "zone": "Top 3",
-    "x": 30,
-    "y": 10,
-    "w": 40,
-    "h": 25,
-    "attempts": 1,
-    "makes": 1,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "IST",
-    "season": "2025-26",
-    "zone": "Corner 3 L",
-    "x": 2,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 20,
-    "makes": 20,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "IST",
-    "season": "2025-26",
-    "zone": "Corner 3 R",
-    "x": 84,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 15,
-    "makes": 15,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "IST",
-    "season": "2025-26",
-    "zone": "Mid-range L",
-    "x": 18,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 151,
-    "makes": 80,
-    "fg_pct": 0.53
-  },
-  {
-    "team": "IST",
-    "season": "2025-26",
-    "zone": "Mid-range R",
-    "x": 58,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 88,
-    "makes": 32,
-    "fg_pct": 0.364
-  },
-  {
-    "team": "IST",
-    "season": "2025-26",
-    "zone": "Paint",
-    "x": 50,
-    "y": 85,
-    "w": 40,
-    "h": 25,
-    "attempts": 39,
-    "makes": 32,
-    "fg_pct": 0.821
-  },
-  {
-    "team": "IST",
-    "season": "2025-26",
-    "zone": "Top 3",
-    "x": 30,
-    "y": 10,
-    "w": 40,
-    "h": 25,
-    "attempts": 3,
-    "makes": 3,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "MAD",
-    "season": "2025-26",
-    "zone": "Corner 3 L",
-    "x": 2,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 19,
-    "makes": 19,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "MAD",
-    "season": "2025-26",
-    "zone": "Corner 3 R",
-    "x": 84,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 13,
-    "makes": 13,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "MAD",
+    "team": "MCO",
     "season": "2025-26",
     "zone": "Mid-range L",
     "x": 18,
@@ -464,80 +536,8 @@
     "w": 24,
     "h": 30,
     "attempts": 134,
-    "makes": 73,
-    "fg_pct": 0.545
-  },
-  {
-    "team": "MAD",
-    "season": "2025-26",
-    "zone": "Mid-range R",
-    "x": 58,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 93,
-    "makes": 39,
-    "fg_pct": 0.419
-  },
-  {
-    "team": "MAD",
-    "season": "2025-26",
-    "zone": "Paint",
-    "x": 50,
-    "y": 85,
-    "w": 40,
-    "h": 25,
-    "attempts": 49,
-    "makes": 36,
-    "fg_pct": 0.735
-  },
-  {
-    "team": "MAD",
-    "season": "2025-26",
-    "zone": "Top 3",
-    "x": 30,
-    "y": 10,
-    "w": 40,
-    "h": 25,
-    "attempts": 2,
-    "makes": 2,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "MCO",
-    "season": "2025-26",
-    "zone": "Corner 3 L",
-    "x": 2,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 14,
-    "makes": 14,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "MCO",
-    "season": "2025-26",
-    "zone": "Corner 3 R",
-    "x": 84,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 7,
-    "makes": 7,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "MCO",
-    "season": "2025-26",
-    "zone": "Mid-range L",
-    "x": 18,
-    "y": 55,
-    "w": 24,
-    "h": 30,
-    "attempts": 99,
-    "makes": 52,
-    "fg_pct": 0.525
+    "makes": 72,
+    "fg_pct": 0.537
   },
   {
     "team": "MCO",
@@ -547,9 +547,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 52,
-    "makes": 19,
-    "fg_pct": 0.365
+    "attempts": 75,
+    "makes": 25,
+    "fg_pct": 0.333
   },
   {
     "team": "MCO",
@@ -559,9 +559,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 65,
-    "makes": 52,
-    "fg_pct": 0.8
+    "attempts": 85,
+    "makes": 65,
+    "fg_pct": 0.765
   },
   {
     "team": "MCO",
@@ -655,8 +655,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 24,
+    "makes": 24,
     "fg_pct": 1.0
   },
   {
@@ -667,8 +667,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 21,
-    "makes": 21,
+    "attempts": 35,
+    "makes": 35,
     "fg_pct": 1.0
   },
   {
@@ -679,9 +679,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 107,
-    "makes": 61,
-    "fg_pct": 0.57
+    "attempts": 167,
+    "makes": 91,
+    "fg_pct": 0.545
   },
   {
     "team": "MUN",
@@ -691,9 +691,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 95,
-    "makes": 30,
-    "fg_pct": 0.316
+    "attempts": 176,
+    "makes": 54,
+    "fg_pct": 0.307
   },
   {
     "team": "MUN",
@@ -703,9 +703,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 55,
-    "makes": 37,
-    "fg_pct": 0.673
+    "attempts": 97,
+    "makes": 69,
+    "fg_pct": 0.711
   },
   {
     "team": "MUN",
@@ -715,8 +715,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 1,
-    "makes": 1,
+    "attempts": 2,
+    "makes": 2,
     "fg_pct": 1.0
   },
   {
@@ -727,8 +727,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 18,
-    "makes": 18,
+    "attempts": 24,
+    "makes": 24,
     "fg_pct": 1.0
   },
   {
@@ -739,8 +739,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 15,
+    "makes": 15,
     "fg_pct": 1.0
   },
   {
@@ -751,9 +751,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 164,
-    "makes": 105,
-    "fg_pct": 0.64
+    "attempts": 196,
+    "makes": 127,
+    "fg_pct": 0.648
   },
   {
     "team": "OLY",
@@ -763,9 +763,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 94,
-    "makes": 31,
-    "fg_pct": 0.33
+    "attempts": 121,
+    "makes": 38,
+    "fg_pct": 0.314
   },
   {
     "team": "OLY",
@@ -775,9 +775,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 49,
-    "makes": 35,
-    "fg_pct": 0.714
+    "attempts": 67,
+    "makes": 50,
+    "fg_pct": 0.746
   },
   {
     "team": "OLY",
@@ -799,8 +799,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 13,
-    "makes": 13,
+    "attempts": 17,
+    "makes": 17,
     "fg_pct": 1.0
   },
   {
@@ -811,8 +811,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 20,
-    "makes": 20,
+    "attempts": 24,
+    "makes": 24,
     "fg_pct": 1.0
   },
   {
@@ -823,9 +823,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 87,
-    "makes": 51,
-    "fg_pct": 0.586
+    "attempts": 122,
+    "makes": 74,
+    "fg_pct": 0.607
   },
   {
     "team": "PAM",
@@ -835,9 +835,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 70,
-    "makes": 26,
-    "fg_pct": 0.371
+    "attempts": 101,
+    "makes": 35,
+    "fg_pct": 0.347
   },
   {
     "team": "PAM",
@@ -847,9 +847,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 53,
-    "makes": 32,
-    "fg_pct": 0.604
+    "attempts": 69,
+    "makes": 42,
+    "fg_pct": 0.609
   },
   {
     "team": "PAM",
@@ -859,8 +859,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 4,
-    "makes": 4,
+    "attempts": 6,
+    "makes": 6,
     "fg_pct": 1.0
   },
   {
@@ -871,8 +871,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 15,
-    "makes": 15,
+    "attempts": 12,
+    "makes": 12,
     "fg_pct": 1.0
   },
   {
@@ -883,8 +883,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 8,
+    "makes": 8,
     "fg_pct": 1.0
   },
   {
@@ -895,9 +895,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 123,
-    "makes": 86,
-    "fg_pct": 0.699
+    "attempts": 100,
+    "makes": 71,
+    "fg_pct": 0.71
   },
   {
     "team": "PAN",
@@ -907,9 +907,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 116,
-    "makes": 39,
-    "fg_pct": 0.336
+    "attempts": 89,
+    "makes": 28,
+    "fg_pct": 0.315
   },
   {
     "team": "PAN",
@@ -919,9 +919,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 76,
-    "makes": 50,
-    "fg_pct": 0.658
+    "attempts": 55,
+    "makes": 34,
+    "fg_pct": 0.618
   },
   {
     "team": "PAN",
@@ -943,8 +943,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 14,
-    "makes": 14,
+    "attempts": 30,
+    "makes": 30,
     "fg_pct": 1.0
   },
   {
@@ -955,8 +955,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 17,
-    "makes": 17,
+    "attempts": 14,
+    "makes": 14,
     "fg_pct": 1.0
   },
   {
@@ -967,9 +967,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 114,
-    "makes": 72,
-    "fg_pct": 0.632
+    "attempts": 150,
+    "makes": 90,
+    "fg_pct": 0.6
   },
   {
     "team": "PAR",
@@ -979,9 +979,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 102,
-    "makes": 36,
-    "fg_pct": 0.353
+    "attempts": 130,
+    "makes": 47,
+    "fg_pct": 0.362
   },
   {
     "team": "PAR",
@@ -991,9 +991,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 64,
-    "makes": 40,
-    "fg_pct": 0.625
+    "attempts": 82,
+    "makes": 55,
+    "fg_pct": 0.671
   },
   {
     "team": "PAR",
@@ -1015,8 +1015,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 28,
-    "makes": 28,
+    "attempts": 41,
+    "makes": 41,
     "fg_pct": 1.0
   },
   {
@@ -1027,8 +1027,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 20,
-    "makes": 20,
+    "attempts": 26,
+    "makes": 26,
     "fg_pct": 1.0
   },
   {
@@ -1039,9 +1039,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 137,
-    "makes": 76,
-    "fg_pct": 0.555
+    "attempts": 205,
+    "makes": 122,
+    "fg_pct": 0.595
   },
   {
     "team": "PRS",
@@ -1051,9 +1051,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 116,
-    "makes": 39,
-    "fg_pct": 0.336
+    "attempts": 161,
+    "makes": 51,
+    "fg_pct": 0.317
   },
   {
     "team": "PRS",
@@ -1063,9 +1063,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 51,
-    "makes": 31,
-    "fg_pct": 0.608
+    "attempts": 89,
+    "makes": 53,
+    "fg_pct": 0.596
   },
   {
     "team": "PRS",
@@ -1087,8 +1087,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 10,
-    "makes": 10,
+    "attempts": 19,
+    "makes": 19,
     "fg_pct": 1.0
   },
   {
@@ -1099,8 +1099,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 12,
-    "makes": 12,
+    "attempts": 25,
+    "makes": 25,
     "fg_pct": 1.0
   },
   {
@@ -1111,9 +1111,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 123,
-    "makes": 88,
-    "fg_pct": 0.715
+    "attempts": 220,
+    "makes": 150,
+    "fg_pct": 0.682
   },
   {
     "team": "RED",
@@ -1123,9 +1123,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 104,
-    "makes": 41,
-    "fg_pct": 0.394
+    "attempts": 192,
+    "makes": 70,
+    "fg_pct": 0.365
   },
   {
     "team": "RED",
@@ -1135,9 +1135,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 67,
-    "makes": 45,
-    "fg_pct": 0.672
+    "attempts": 122,
+    "makes": 81,
+    "fg_pct": 0.664
   },
   {
     "team": "RED",
@@ -1147,8 +1147,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 2,
-    "makes": 2,
+    "attempts": 3,
+    "makes": 3,
     "fg_pct": 1.0
   },
   {
@@ -1156,6 +1156,18 @@
     "season": "2025-26",
     "zone": "Corner 3 L",
     "x": 2,
+    "y": 78,
+    "w": 14,
+    "h": 22,
+    "attempts": 29,
+    "makes": 29,
+    "fg_pct": 1.0
+  },
+  {
+    "team": "TEL",
+    "season": "2025-26",
+    "zone": "Corner 3 R",
+    "x": 84,
     "y": 78,
     "w": 14,
     "h": 22,
@@ -1166,26 +1178,14 @@
   {
     "team": "TEL",
     "season": "2025-26",
-    "zone": "Corner 3 R",
-    "x": 84,
-    "y": 78,
-    "w": 14,
-    "h": 22,
-    "attempts": 13,
-    "makes": 13,
-    "fg_pct": 1.0
-  },
-  {
-    "team": "TEL",
-    "season": "2025-26",
     "zone": "Mid-range L",
     "x": 18,
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 133,
-    "makes": 83,
-    "fg_pct": 0.624
+    "attempts": 202,
+    "makes": 119,
+    "fg_pct": 0.589
   },
   {
     "team": "TEL",
@@ -1195,9 +1195,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 95,
-    "makes": 27,
-    "fg_pct": 0.284
+    "attempts": 147,
+    "makes": 47,
+    "fg_pct": 0.32
   },
   {
     "team": "TEL",
@@ -1207,9 +1207,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 64,
-    "makes": 41,
-    "fg_pct": 0.641
+    "attempts": 94,
+    "makes": 63,
+    "fg_pct": 0.67
   },
   {
     "team": "TEL",
@@ -1219,8 +1219,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 5,
-    "makes": 5,
+    "attempts": 7,
+    "makes": 7,
     "fg_pct": 1.0
   },
   {
@@ -1231,8 +1231,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 15,
-    "makes": 15,
+    "attempts": 32,
+    "makes": 32,
     "fg_pct": 1.0
   },
   {
@@ -1243,8 +1243,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 18,
-    "makes": 18,
+    "attempts": 31,
+    "makes": 31,
     "fg_pct": 1.0
   },
   {
@@ -1255,9 +1255,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 118,
-    "makes": 73,
-    "fg_pct": 0.619
+    "attempts": 185,
+    "makes": 109,
+    "fg_pct": 0.589
   },
   {
     "team": "ULK",
@@ -1267,9 +1267,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 101,
-    "makes": 37,
-    "fg_pct": 0.366
+    "attempts": 184,
+    "makes": 69,
+    "fg_pct": 0.375
   },
   {
     "team": "ULK",
@@ -1279,9 +1279,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 57,
-    "makes": 35,
-    "fg_pct": 0.614
+    "attempts": 103,
+    "makes": 64,
+    "fg_pct": 0.621
   },
   {
     "team": "ULK",
@@ -1375,8 +1375,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 10,
-    "makes": 10,
+    "attempts": 12,
+    "makes": 12,
     "fg_pct": 1.0
   },
   {
@@ -1387,8 +1387,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 29,
-    "makes": 29,
+    "attempts": 32,
+    "makes": 32,
     "fg_pct": 1.0
   },
   {
@@ -1399,9 +1399,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 109,
-    "makes": 73,
-    "fg_pct": 0.67
+    "attempts": 138,
+    "makes": 94,
+    "fg_pct": 0.681
   },
   {
     "team": "ZAL",
@@ -1411,9 +1411,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 112,
-    "makes": 38,
-    "fg_pct": 0.339
+    "attempts": 136,
+    "makes": 44,
+    "fg_pct": 0.324
   },
   {
     "team": "ZAL",
@@ -1423,9 +1423,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 47,
-    "makes": 34,
-    "fg_pct": 0.723
+    "attempts": 63,
+    "makes": 48,
+    "fg_pct": 0.762
   },
   {
     "team": "ZAL",
