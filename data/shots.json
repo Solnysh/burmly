@@ -439,8 +439,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 33,
-    "makes": 33,
+    "attempts": 28,
+    "makes": 28,
     "fg_pct": 1.0
   },
   {
@@ -451,8 +451,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 23,
-    "makes": 23,
+    "attempts": 19,
+    "makes": 19,
     "fg_pct": 1.0
   },
   {
@@ -463,9 +463,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 226,
-    "makes": 132,
-    "fg_pct": 0.584
+    "attempts": 194,
+    "makes": 111,
+    "fg_pct": 0.572
   },
   {
     "team": "MAD",
@@ -475,9 +475,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 156,
-    "makes": 54,
-    "fg_pct": 0.346
+    "attempts": 133,
+    "makes": 49,
+    "fg_pct": 0.368
   },
   {
     "team": "MAD",
@@ -487,9 +487,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 117,
-    "makes": 76,
-    "fg_pct": 0.65
+    "attempts": 99,
+    "makes": 64,
+    "fg_pct": 0.646
   },
   {
     "team": "MAD",
@@ -655,8 +655,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 24,
-    "makes": 24,
+    "attempts": 18,
+    "makes": 18,
     "fg_pct": 1.0
   },
   {
@@ -667,8 +667,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 34,
-    "makes": 34,
+    "attempts": 31,
+    "makes": 31,
     "fg_pct": 1.0
   },
   {
@@ -679,9 +679,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 194,
-    "makes": 106,
-    "fg_pct": 0.546
+    "attempts": 160,
+    "makes": 88,
+    "fg_pct": 0.55
   },
   {
     "team": "MUN",
@@ -691,9 +691,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 167,
-    "makes": 52,
-    "fg_pct": 0.311
+    "attempts": 147,
+    "makes": 45,
+    "fg_pct": 0.306
   },
   {
     "team": "MUN",
@@ -703,9 +703,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 103,
-    "makes": 68,
-    "fg_pct": 0.66
+    "attempts": 81,
+    "makes": 54,
+    "fg_pct": 0.667
   },
   {
     "team": "MUN",
@@ -871,8 +871,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 25,
-    "makes": 25,
+    "attempts": 20,
+    "makes": 20,
     "fg_pct": 1.0
   },
   {
@@ -883,8 +883,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 22,
-    "makes": 22,
+    "attempts": 19,
+    "makes": 19,
     "fg_pct": 1.0
   },
   {
@@ -895,9 +895,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 232,
-    "makes": 159,
-    "fg_pct": 0.685
+    "attempts": 193,
+    "makes": 134,
+    "fg_pct": 0.694
   },
   {
     "team": "PAN",
@@ -907,9 +907,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 198,
-    "makes": 68,
-    "fg_pct": 0.343
+    "attempts": 171,
+    "makes": 60,
+    "fg_pct": 0.351
   },
   {
     "team": "PAN",
@@ -919,9 +919,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 123,
-    "makes": 81,
-    "fg_pct": 0.659
+    "attempts": 102,
+    "makes": 68,
+    "fg_pct": 0.667
   },
   {
     "team": "PAN",
@@ -931,8 +931,8 @@
     "y": 10,
     "w": 40,
     "h": 25,
-    "attempts": 3,
-    "makes": 3,
+    "attempts": 2,
+    "makes": 2,
     "fg_pct": 1.0
   },
   {
@@ -1159,8 +1159,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 32,
-    "makes": 32,
+    "attempts": 31,
+    "makes": 31,
     "fg_pct": 1.0
   },
   {
@@ -1171,8 +1171,8 @@
     "y": 78,
     "w": 14,
     "h": 22,
-    "attempts": 25,
-    "makes": 25,
+    "attempts": 19,
+    "makes": 19,
     "fg_pct": 1.0
   },
   {
@@ -1183,9 +1183,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 220,
-    "makes": 138,
-    "fg_pct": 0.627
+    "attempts": 194,
+    "makes": 123,
+    "fg_pct": 0.634
   },
   {
     "team": "TEL",
@@ -1195,9 +1195,9 @@
     "y": 55,
     "w": 24,
     "h": 30,
-    "attempts": 164,
-    "makes": 48,
-    "fg_pct": 0.293
+    "attempts": 140,
+    "makes": 42,
+    "fg_pct": 0.3
   },
   {
     "team": "TEL",
@@ -1207,9 +1207,9 @@
     "y": 85,
     "w": 40,
     "h": 25,
-    "attempts": 122,
-    "makes": 85,
-    "fg_pct": 0.697
+    "attempts": 103,
+    "makes": 68,
+    "fg_pct": 0.66
   },
   {
     "team": "TEL",
